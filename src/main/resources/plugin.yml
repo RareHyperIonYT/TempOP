@@ -1,0 +1,12 @@
+name: TempOP
+version: '1.0.0'
+author: RareHyperIon
+main: me.RareHyperIon.TempOP.TempOP
+commands:
+  tempop:
+    description: "Temporarily op a player."
+    usage: "/tempop <player> [5m / 1d / 1mo]"
+permissions:
+  tempop.use:
+    description: "Permission to use /tempop"
+    default: op
