@@ -40,6 +40,11 @@ public class PlayerListener implements Listener {
         final Player player = event.getPlayer();
 
         if(this.plugin.isExpired(player.getUniqueId(), System.currentTimeMillis())) {
+            if(!player.isOp()) {
+                this.plugin.operators.remove(player.getUniqueId());
+                return;
+            }
+
             this.plugin.deop(player);
             player.sendMessage(this.plugin.getConfig().getString("message.expire").replace('&', '§'));
         }

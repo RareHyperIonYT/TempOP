@@ -17,6 +17,8 @@ message:
   # Message sent when a temporary operator attempts to remove operator status from others.
   deop: "&cTemporary operators aren't permitted to deop others."
 
+  already-opped: "&cThis person already has operator."
+
   # Displayed when a player specified in the command cannot be found.
   player: "&cThere is no player called \"%s\"."
 

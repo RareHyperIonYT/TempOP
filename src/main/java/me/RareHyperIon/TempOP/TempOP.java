@@ -56,11 +56,15 @@ public final class TempOP extends JavaPlugin {
         final long currentTime = System.currentTimeMillis();
 
         for(Map.Entry<UUID, Long> entry : this.operators.entrySet()) {
-            if(!this.isExpired(entry.getKey(), currentTime)) continue;
-
             final Player player = Bukkit.getPlayer(entry.getKey());
+            if(player == null) continue;  // Ignore, it will be handled when they join back.
 
-            if(player == null) continue; // Ignore, it will be handled when they join back.
+            if(!player.isOp()) {
+                this.operators.remove(entry.getKey());
+                return;
+            }
+
+            if(!this.isExpired(entry.getKey(), currentTime)) continue;
 
             this.deop(player);
             player.sendMessage(this.getConfig().getString("message.expire").replace('&', '§'));

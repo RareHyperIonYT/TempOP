@@ -47,6 +47,11 @@ public class TempCommand implements CommandExecutor, TabCompleter {
             return true;
         }
 
+        if(player.isOp()) {
+            this.sendMessage(sender, config.getString("message.already-opped"));
+            return true;
+        }
+
         final String duration = args.length == 1 ? config.getString("default-duration") : this.concat(args);
 
         try {
