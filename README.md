@@ -26,32 +26,35 @@ To manage the use of the `/tempop` command, assign the following permission node
   ```yml
   # The default duration for temporarily granting operator status if no duration is specified.
   default-duration: "5m"
-
+  
   # Whether the console is allowed to temporarily grant operator status to players.
   console-allowed: true
-
+  
   message:
     # Displayed when the command is attempted from the console with "console-allowed" set to false.
     console: "&cYou must be a player to use this command."
-
+  
     # Message shown when a player tries to run the command without the necessary permissions to do so.
     permission: "&cYou do not have permission to run this command."
-
+  
     # Message sent when a temporary operator attempts to grant operator status to others.
     op: "&cTemporary operators aren't permitted to op others."
-
+  
     # Message sent when a temporary operator attempts to remove operator status from others.
     deop: "&cTemporary operators aren't permitted to deop others."
-
+  
+    # Message sent when you try to temporary op someone which already has operator.
+    already-opped: "&cThis person already has operator."
+  
     # Displayed when a player specified in the command cannot be found.
     player: "&cThere is no player called \"%s\"."
-
+  
     # Confirmation message sent to the player when successfully granting temporary operator status.
     give: "&aSuccessfully gave {player} operator temporarily for {duration}."
-
+  
     # Displayed when a player is granted temporary operator status.
     given: "&aYou were temporarily given operator for {duration} by {player}."
-
+  
     # Notification sent to a player when their temporary operator status expires.
     expire: "&cYour OP status has expired."
   ```
